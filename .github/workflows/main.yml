@@ -1,0 +1,12 @@
+name: Robot-Constructor
+on: [push] # ¡Se activa solo cuando subes cambios!
+
+jobs:
+  construccion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Leyendo planos
+        uses: actions/checkout@v4
+
+      - name: Armando la cápsula Docker
+        run: docker build -t mi-web-espacial .
